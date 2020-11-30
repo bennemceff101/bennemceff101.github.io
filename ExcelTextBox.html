@@ -48,23 +48,27 @@
 									<h2><a href="#">Excel Chart Sum Total Text Box Addition<br />
 									</a></h2>
 									<section>
+									<p style="text-align:left;"
 									The Before image shows prior version of chart.  This chart was printed to pdf from Excel along with others.
                   The customer only received the final pdf version.  They needed to perform a quick check on their end for the grand total
-                  to compare to another report.  With no access to source file, they would type in values on the side from reading off pdf.
-                  I couldn't add a total bar on the chart b/c it would throw the chart's axis range out of whack and make small bars 
+                  to compare to another report.  With no access to source file, they would type in values manullay from reading off pdf.
+                  I couldn't add a total bar on the chart b/c it would throw the chart's axis range out of whack and make the small bars 
                   even smaller.  I couldn't add a data table with the total w/o adding a bar in the chart itself.
                   I could have made a second chart with data table, and hidden the chart itself and positioned the data table portion
-                  below the existing chart.  I've used this method before but always have issues with the data table of the second chart
-                  lining up under the visible bar chart.
-                  Since the customer only really needed the totals, I inserted a text box with the formula =$L$26
-                  L26 was taking the range of fund names, counts, and amounts and summarizing and formatting with:
+                  below the existing chart.  I've used this method before but always have issues with the data table not lining up properly
+                  under the visible bar chart.
+		  <br>		
+									   
+                  Since the customer only really needed the totals, I inserted a text box with the formula =$L$26.
+                  L26 was taking the range of cells containing fund names, counts, and amounts and summarizing and formatting with this formula:
                   ="Total Amount: $" & TEXT(SUM(D3:D18),#,##0.00_;-#,##0. ")&CHAR(10)&CHAR(10)&G21&"Total Count :" & TEXT(SUM(C3:C18),"#,##0_;-#,##) ")
                     &CHAR(10)&CHAR(10)&G22
-                  The result is displayed in the After image.
+                  The end product chart is displayed in the After image.
                   It was a quicker, easier solution than multiple charts and gave the customer exactly what they were adding up by hand on
                   a calculator.
-                    
-                 Note that this is all been replaced with dummy fund names and data.
+                  <br>  
+																		      
+                 *Note that this is all been replaced with dummy fund names and data.
                 
 									</section>
 								</header>
