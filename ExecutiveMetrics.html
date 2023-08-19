@@ -50,20 +50,41 @@
 									<section>
 									<p style = "text-align:left;">
 									Scenario: We need to provide VPs with a quick and easy layout to view summary statistics for our company.
-		  <br>		
-		  							Where's the Data?: We leveraged OneStream to build and mantain annual budgets. OneStream also will provide reporting
-									on actuals. We have this in Excel via the OneStream connector, but in formats best for creating the company reporting PDFs & PPTs.
+		  							<br>	
+									<br>	
+		  							Where's the Data? We leveraged OneStream to build and mantain annual budgets. OneStream also will provide reporting
+									on actuals. We have this in Excel via the OneStream add-in, but in formats best for creating the company reporting PDFs & PPTs.
 									So why not create a more Tableau Friendly Quick View via the OneStream connector?
 									<br>
-                  Since the customer only really needed the totals, I inserted a text box with the formula =$L$26.
-                  L26 was taking the range of cells containing fund names, counts, and amounts and summarizing and formatting with this formula:
-                  ="Total Amount: $" & TEXT(SUM(D3:D18),#,##0.00_;-#,##0. ")&CHAR(10)&CHAR(10)&G21&"Total Count :" & TEXT(SUM(C3:C18),"#,##0_;-#,##) ")
-                    &CHAR(10)&CHAR(10)&G22
-                  The end product chart is displayed in the After image.
-                  It was a quicker, easier solution than multiple charts and gave the customer exactly what they were adding up by hand on
-                  a calculator.
+									<br>
+									Step 1: Created a basic Quick View via the OneStream Excel add-in.  Org ID and portfolio were key components on rows, 
+									time was a big component on columns. 
+									<br>
+									<br>
+									Step 2: A quick org info lookup table was created in Excel to add org names to org ids.
+									<br>
+									<br>
+									Step 3: Tableau Prep was used to pivot the data to make it even flatter for Tableau Desktop. The Prep flow was published
+									to Tableau Server as a datasource. This will require a refresh every 4 weeks, yet in the long term, an automated, scheduled
+									data job could run, if my company purchases Tableau's Data Management package.
+									<br>
+									<br>
+									Step 4: Worksheets were created in Tableau Desktop. One division (GGGG in the fake data) has an alternate project hierarchy
+									in OneStream to report on a different customer, so a popup window was created to appear in the header using Tableau parameters.
+									<br>
+									<br>
+									Step 5: URL links with images were created to our company standard reports in PDF & PPT, and a Tutorial MP4 was made. These
+									files are all housed on Microsoft SharePoint.
+									<br>
+									<br>
+									Step 6: A dynamic "Executive Summary" worksheet was created to sit in the bottom right corner. The caption is used here 
+									to display a written summary. Tableau Data Story was attempted but gave clumsy details. A more manual "curation"
+									 of that written summary was required for now.
+									 <br>
+									 <br>
+									View this on Tableau Public </li><a href="https://public.tableau.com/app/profile/benjamin.nemceff/viz/ExecutiveMetricsDashboard/ExecutiveKPIs"</li>			
                   <br>  
-																		      
+				  <br>														      
                  *Note that this is all been replaced with dummy fund names and data.
                 </p>
 									
