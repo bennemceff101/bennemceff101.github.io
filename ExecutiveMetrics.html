@@ -19,9 +19,9 @@
 
 				<!-- Intro -->
 					<div id="intro">
-						<h1>Excel Chart Sum Total Text Box Addition<br />
+						<h1>Executive Metrics Dashboard<br />
 						</h1>
-						<p>A quick total formula text box on an existing chart to satisfy the customer's request</p>
+						<p>Using OneStream QuickView to pull aggregate financial data and present in Tableau</p>
 						<ul class="actions">
 							<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
 						</ul>
@@ -44,21 +44,17 @@
 						<!-- Featured Post -->
 							<article class="post featured">
 								<header class="major">
-									<span class="date">October 30, 2020</span>
-									<h2><a href="#">Excel Chart Sum Total Text Box Addition<br />
+									<span class="date">August 19, 2023</span>
+									<h2><a href="#">Executive Metrics Dashboard<br />
 									</a></h2>
 									<section>
 									<p style = "text-align:left;">
-									The Before image shows prior version of chart.  This chart was printed to pdf from Excel along with others.
-                  The customer only received the final pdf version.  They needed to perform a quick check on their end for the grand total
-                  to compare to another report.  With no access to source file, they would type in values manually from reading off pdf.
-                  I couldn't add a total bar on the chart b/c it would throw the chart's axis range out of whack and make the small bars 
-                  even smaller.  I couldn't add a data table with the total w/o adding a bar in the chart itself.
-                  I could have made a second chart with data table, and hidden the chart itself and positioned the data table portion
-                  below the existing chart.  I've used this method before but always have issues with the data table not lining up properly
-                  under the visible bar chart.
+									Scenario: We need to provide VPs with a quick and easy layout to view summary statistics for our company.
 		  <br>		
-									   
+		  							Where's the Data?: We leveraged OneStream to build and mantain annual budgets. OneStream also will provide reporting
+									on actuals. We have this in Excel via the OneStream connector, but in formats best for creating the company reporting PDFs & PPTs.
+									So why not create a more Tableau Friendly Quick View via the OneStream connector?
+									<br>
                   Since the customer only really needed the totals, I inserted a text box with the formula =$L$26.
                   L26 was taking the range of cells containing fund names, counts, and amounts and summarizing and formatting with this formula:
                   ="Total Amount: $" & TEXT(SUM(D3:D18),#,##0.00_;-#,##0. ")&CHAR(10)&CHAR(10)&G21&"Total Count :" & TEXT(SUM(C3:C18),"#,##0_;-#,##) ")
