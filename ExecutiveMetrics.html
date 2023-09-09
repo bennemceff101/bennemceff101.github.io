@@ -52,25 +52,33 @@
 									Scenario: We need to provide VPs with a quick and easy layout to view summary statistics for our company.
 		  							<br>	
 									<br>	
-		  							Where's the Data? We leveraged OneStream to build and mantain annual budgets. OneStream also will provide reporting
-									on actuals. We have this in Excel via the OneStream add-in, but in formats best for creating the company reporting PDFs & PPTs.
+		  							Where's the Data? We use OneStream to build and mantain annual budgets. OneStream also will provide reporting
+									on actuals. We already had this in Excel QuickViews and CubeViews via the OneStream add-in, but in formats best for creating the company reporting PDFs & PPTs.
 									So why not create a more Tableau Friendly Quick View via the OneStream connector?
 									<br>
 									<br>
 									Step 1: Created a basic Quick View via the OneStream Excel add-in.  Org ID and portfolio were key components on rows, 
-									time was a big component on columns. 
+									time was a big component on columns. We won't get into the weeds, yet I will mention one metric is reported on a period end (4-week basis) while another is bi-weekly (2-week basis)
 									<br>
 									<br>
-									Step 2: A quick org info lookup table was created in Excel to add org names to org ids.
+									Step 2: A quick org info lookup table was created in Excel to add org names to org ids. Now names could have been brought into the QuickView, yet I wanted to ensure I used
+									Organization IDs, not names as a general practice. It is thought in the long run, names won't be part of the dataset, they will simply be a joined table in Tableau.
 									<br>
 									<br>
 									Step 3: Tableau Prep was used to pivot the data to make it even flatter for Tableau Desktop. The Prep flow was published
 									to Tableau Server as a datasource. This will require a refresh every 4 weeks, yet in the long term, an automated, scheduled
-									data job could run, if my company purchases Tableau's Data Management package.
+									data job could run, if wes Tableau's Data Management package. It required 2 pivots to flatten the data, and I imagine it could be simpler.
+									Additionally, I joined the metrics data with our fiscal calendar, to be on the safe side, but found Tableau did just fine w/o it. 
+									A future version will remove this extra table/join/output.  Output2 is the good one.
 									<br>
 									<br>
-									Step 4: Worksheets were created in Tableau Desktop. One division (GGGG in the fake data) has an alternate project hierarchy
-									in OneStream to report on a different customer, so a popup window was created to appear in the header using Tableau parameters.
+									Step 4: To make fake data to dsiplay this on Tableau Public, I created a copy of this Tableau Prep file and added a "Multiplier" column along with calculated fields
+									applying this to actuals and budgets. The "Org Name" column is the other fake column.
+									<br>
+									<br>
+									Step 5: Worksheets were created in Tableau Desktop. One division (GGGG in the fake data) has an alternate project hierarchy
+									in OneStream to report on a different customer, so a popup window was created to appear in the header dashboard header if selected. A filter formula T/F was made to 
+									control its display
 									<br>
 									<br>
 									Step 5: URL links with images were created to our company standard reports in PDF & PPT, and a Tutorial MP4 was made. These
